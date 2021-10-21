@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "previews",
+  "info": {
+    "name": "preview"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "resume_preview": {
+      "type": "string"
+    },
+    "picture_preview": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "note": {
+      "via": "preview",
+      "model": "notes"
+    }
+  }
+}
